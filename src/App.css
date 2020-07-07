@@ -1,3 +1,15 @@
 /* .App{
     text-align: center;
 } */
+ul,li,#link{
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+}
+nav{
+    background-color:blueviolet;
+}
