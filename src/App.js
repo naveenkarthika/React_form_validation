@@ -23,13 +23,15 @@ function App() {
                 <Link to="/about" id="link">About</Link>
               </li>
               <li>
-                <Link to="/contact"id="link">Contact</Link>
-              </li> 
-              <li>
-                <Link to="/register" id="link">Register</Link>
+                <Link to="/contact" id="link">Contact</Link>
               </li>
-              <li>
-                <Link to="/login" id="link">Login</Link>
+            </ul>
+            <ul className="right-ul">
+              <li className="right-li">
+                <Link to="/register" id="link" className="right">Register</Link>
+              </li>
+              <li className="right-li">
+                <Link to="/login" id="link" className="right">Login</Link>
               </li>
             </ul>
           </nav>

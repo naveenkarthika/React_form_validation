@@ -4,15 +4,19 @@
 ul,li,#link{
     text-decoration: none;
     list-style: none;
-    display: inline-block;
-    
+    display: inline-block; 
     padding-top: 5px;
-    background-attachment: fixed;
     color: white;
     text-align: center;
     margin-left: 10px;
+
     
 }
 nav{
     background-color:rgb(102, 27, 240);
+}
+.right-ul,.right-li,.right{
+    float: right;
+    margin-right: 5px;
+    
 }
