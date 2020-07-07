@@ -5,11 +5,14 @@ ul,li,#link{
     text-decoration: none;
     list-style: none;
     display: inline-block;
-    padding: 5px;
+    
+    padding-top: 5px;
     background-attachment: fixed;
     color: white;
     text-align: center;
+    margin-left: 10px;
+    
 }
 nav{
-    background-color:blueviolet;
+    background-color:rgb(102, 27, 240);
 }
