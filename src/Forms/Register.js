@@ -1,8 +1,10 @@
 import React from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const Register = () => {
+const Register = (props) => {
     const formik=useFormik({
         initialValues:{
             name:"",
@@ -11,8 +13,16 @@ const Register = () => {
             confirmPassword:""
 
         },
-        onSubmit:(userInput) => {
-            console.log(userInput);
+        onSubmit:(data) => {
+            console.log(data);
+            axios.post('http://localhost:5000/api/register',data)
+            .then(res => {
+                console.log(data);
+                props.history.push('/login');
+                toast.success("Successfully Register");
+            }).catch(err => {
+                toast.error(err.response.data)
+            })
         },
         validationSchema:Yup.object({
             name:Yup.string()

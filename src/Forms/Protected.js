@@ -5,12 +5,14 @@ const ProtectedRouter = ({ component,...rest }) => {
     let RenderComponents = component;
     // console.log(component);
     // console.log(rest);
+    console.log(RenderComponents);
+    let hashToken = JSON.parse(localStorage.getItem('auth'));
     return (
         <Route
             {...rest}
             render={
                 props => {
-                    return false ? (
+                    return  hashToken !== null ? (
                         <RenderComponents {...props} />
                     ) : (
                             <Redirect to={{

@@ -1,15 +1,29 @@
 import React from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const Login = () => {
+
+const Login = (props) => {
     const formik=useFormik({
         initialValues:{
             email:"",
             password: ""
         },
-        onSubmit:(userInput) => {
-            console.log(userInput);
+        onSubmit:(data) => {
+            console.log(data);
+            axios.post('http://localhost:5000/api/login',data)
+            .then(res => {
+                localStorage.setItem('auth',JSON.stringify(res.data));
+                console.log(res);
+                props.history.push('/home');
+                toast.success("Login Successfully")
+            }).catch(err => {
+                toast.error(err.response.data)
+            })
+            
+
         },
         validationSchema:Yup.object({
             email:Yup.string()
