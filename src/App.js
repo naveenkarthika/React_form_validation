@@ -1,10 +1,11 @@
 import React from 'react';
-import FormValidation from "./Forms/FormValidation";
+import Register from "./Forms/Register";
 import './App.css';
 import Home from './Home/Home';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import Login from './Forms/Login';
+import ProtectedRouter from './Forms/Protected';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 
@@ -40,7 +41,7 @@ function App() {
                 renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/register">
-              <FormValidation />
+              <Register />
             </Route>
             <Route path="/login">
               <Login />
@@ -52,8 +53,9 @@ function App() {
               <Contact />
             </Route>
             <Route path="/">
-              <Home />
+              <Login />
             </Route>
+            <ProtectedRouter exact path="/home" component={Home} />
           </Switch>
         </div>
       </Router>

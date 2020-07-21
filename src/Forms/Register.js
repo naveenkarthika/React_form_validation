@@ -2,7 +2,7 @@ import React from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 
-const FormValidation = () => {
+const Register = () => {
     const formik=useFormik({
         initialValues:{
             name:"",
@@ -59,4 +59,4 @@ const FormValidation = () => {
         </div>
     );
 }
-export default FormValidation;
+export default Register;

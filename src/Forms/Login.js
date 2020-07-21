@@ -2,7 +2,7 @@ import React from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 
-const FormValidation = () => {
+const Login = () => {
     const formik=useFormik({
         initialValues:{
             email:"",
@@ -39,4 +39,4 @@ const FormValidation = () => {
         </div>
     );
 }
-export default FormValidation;
+export default Login;
